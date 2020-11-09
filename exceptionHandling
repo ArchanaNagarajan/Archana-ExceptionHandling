@@ -1,0 +1,82 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+class device{
+	 
+	 void dev() throws IOException{
+		 
+		 throw new IOException("Device error");
+		 //System.out.println("normal");
+	 }
+	 }
+public class Handling {
+	
+	static void vote(int age) {
+		
+		if (age<18) {
+			
+			throw new ArithmeticException ("Not eligible to vote");
+		}else {
+			System.out.println("Eligible to vote");
+		}
+	}
+	static void cube() {
+		
+		//Arithmetic exception
+				int result;
+				System.out.println("enter the number : ");
+				Scanner cube = new Scanner(System.in);
+				int value = cube.nextInt();
+				try {
+					
+				result = value*0*0;
+				}
+				catch(ArithmeticException e) {
+					
+					System.out.println(e);
+				}
+				result = value*value*value;
+				System.out.println("cube value is : " +result);
+	}
+	 static void vowels() {
+		
+		//ArrayIndexOutOfBound exception
+				char[] vowels = {'a','e','i','o','u'};
+				try {
+					
+					System.out.println(vowels[7]);
+				}
+				catch(ArrayIndexOutOfBoundsException e) {
+				
+					System.out.println(e);
+				}
+				finally{
+					
+					System.out.println("ArrayIndexOutOfBound exception is implemented");
+				}
+				System.out.println("");
+	}
+	 
+	public static void main(String[] args) throws IOException{
+		
+		int age;
+		System.out.println("enter your age");
+		Scanner sc1 = new Scanner(System.in);
+		age = sc1.nextInt();
+		vote(age);
+		
+		cube();
+		
+		vowels();
+		device d1 = new device();
+		try {
+			
+			d1.dev();
+		}
+		catch(Exception e) {
+			System.out.println("Exception handled");
+		}
+		System.out.println("Completed");
+	}
+}
+	
